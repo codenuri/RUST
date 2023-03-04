@@ -6,7 +6,7 @@ fn main()
 	while i < 10
 	{
 		println!("{}", i);
-		i += 1; // ++i 없음.
+		i += 1; // ++i
 	}
 
 	// ➋ break, continue
