@@ -1,0 +1,36 @@
+struct Rect
+{
+	left   : u32, 
+	top    : u32, 
+	right  : u32, 
+	bottom : u32,
+}
+
+impl Rect
+{
+	fn get_area( &self ) -> u32
+	{
+		(self.right - self.left) * (self.bottom - self.top)
+	}
+
+	fn inflate( &mut self, dx : u32, dy : u32 ) 
+	{
+		self.right += dx;
+		self.bottom += dy;
+	}
+
+	fn new( left : u32, top : u32, right : u32, bottom: u32 ) -> Self 
+	{
+		let rc = Rect{left, top, right, bottom};
+
+		rc
+	}
+}
+
+fn main()
+{
+//	let rc = Rect{left:1,top:1, right:10, bottom:10};
+	let rc = Rect::new(1,1,10,10);
+
+	println!("{}, {}, {}, {}", rc.left, rc.top, rc.right, rc.bottom);
+}
